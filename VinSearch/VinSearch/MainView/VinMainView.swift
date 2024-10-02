@@ -10,9 +10,15 @@ import SwiftData
 
 struct VinMainView: View {
     @State private var searchText = "JT3HP10VXW7092383"
+    @State private var isVinValid = false
     @State private var showingSheet = false
     @StateObject private var viewModel: VinMainViewModel
     @State private var vinToShow: Identify<VinDetails>?
+
+    @FocusState private var focusedField: Field?
+    private enum Field: Int, CaseIterable {
+        case vin
+    }
 
     var detailViewForVin: ((_ vin: String) -> VinDetailsView)
     var detailViewForVinDetails: ((_ vinDetails: VinDetails) -> VinDetailsView)
@@ -26,12 +32,20 @@ struct VinMainView: View {
         self.detailViewForVinDetails = detailViewForVinDetails
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         NavigationView {
             List {
                 HStack {
-                    TextField("Enter VIN", text: $searchText)
+                    VinTextField("Enter VIN", field: $searchText, isValid: $isVinValid)
+                        .focused($focusedField, equals: .vin)
+                        .toolbar {
+                            ToolbarItem(placement: .keyboard) {
+                                Button("Done") {
+                                    focusedField = nil
+                                }
+                            }
+                        }
                     Button("Search") {
                         showingSheet.toggle()
                     }
@@ -40,6 +54,7 @@ struct VinMainView: View {
                     }, content: {
                         self.detailViewForVin(searchText)
                     })
+                    .disabled(!isVinValid)
                 }
 
                 if !viewModel.items.isEmpty {
@@ -48,7 +63,7 @@ struct VinMainView: View {
                             Button(item.vin) {
                                 vinToShow = Identify(id: index, item: item)
                             }
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.primary)
 
                         }
                         .onDelete(perform: deleteItems)

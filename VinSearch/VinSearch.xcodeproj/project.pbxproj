@@ -38,6 +38,7 @@
 		1CB81F902CAD7831000D9166 /* ThroughputStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F8B2CAD7831000D9166 /* ThroughputStrategy.swift */; };
 		1CB81F932CAD7891000D9166 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB81F922CAD7891000D9166 /* Logging */; };
 		1CB81F972CAD7965000D9166 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB81F962CAD7965000D9166 /* Collections */; };
+		1CB81F992CADABFA000D9166 /* VinTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F982CADABFA000D9166 /* VinTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		1CB81F892CAD7831000D9166 /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
 		1CB81F8A2CAD7831000D9166 /* QueueThroughputStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueThroughputStrategy.swift; sourceTree = "<group>"; };
 		1CB81F8B2CAD7831000D9166 /* ThroughputStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThroughputStrategy.swift; sourceTree = "<group>"; };
+		1CB81F982CADABFA000D9166 /* VinTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			children = (
 				1CB81F312CAD2B6C000D9166 /* VinMainView.swift */,
 				1CB81F822CAD6D40000D9166 /* VinMainViewModel.swift */,
+				1CB81F982CADABFA000D9166 /* VinTextField.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				1CB81F322CAD2B6C000D9166 /* VinMainView.swift in Sources */,
 				1CB81F8E2CAD7831000D9166 /* Logs.swift in Sources */,
 				1CB81F832CAD6D40000D9166 /* VinMainViewModel.swift in Sources */,
+				1CB81F992CADABFA000D9166 /* VinTextField.swift in Sources */,
 				1CB81F6E2CAD40D8000D9166 /* RequestMethodType.swift in Sources */,
 				1CB81F632CAD2F59000D9166 /* VinDetailsViewModel.swift in Sources */,
 				1CB81F5E2CAD2E11000D9166 /* VinDetailsView.swift in Sources */,
