@@ -18,44 +18,51 @@ struct VinDetailsView: View {
     }
     
     var body: some View {
-        NavigationView{
-            List{
-                HStack{
-                    Text("VIN")
-                    Spacer()
-                    Text(viewModel.vinDetails.vin)
+        NavigationView {
+            List {
+                if let vinDetails = viewModel.vinDetails {
+                    HStack {
+                        Text("VIN")
+                        Spacer()
+                        Text(vinDetails.vin)
+                    }
+                    HStack {
+                        Text("Country")
+                        Spacer()
+                        Text(vinDetails.country)
+                    }
+                    HStack {
+                        Text("Region")
+                        Spacer()
+                        Text(vinDetails.region)
+                    }
+                    HStack {
+                        Text("WMI")
+                        Spacer()
+                        Text(vinDetails.wmi)
+                    }
+                    HStack {
+                        Text("VDS")
+                        Spacer()
+                        Text(vinDetails.vds)
+                    }
+                    HStack {
+                        Text("VIS")
+                        Spacer()
+                        Text(vinDetails.vis)
+                    }
+                    HStack {
+                        Text("Year")
+                        Spacer()
+                        Text(String(vinDetails.year))
+                    }
+                } else {
+                    HStack {
+                        Spacer()
+                        ProgressView()
+                        Spacer()
+                    }
                 }
-                HStack{
-                    Text("Country")
-                    Spacer()
-                    Text(viewModel.vinDetails.country)
-                }
-                HStack{
-                    Text("Region")
-                    Spacer()
-                    Text(viewModel.vinDetails.region)
-                }
-                HStack{
-                    Text("WMI")
-                    Spacer()
-                    Text(viewModel.vinDetails.wmi)
-                }
-                HStack{
-                    Text("VDS")
-                    Spacer()
-                    Text(viewModel.vinDetails.vds)
-                }
-                HStack{
-                    Text("VIS")
-                    Spacer()
-                    Text(viewModel.vinDetails.vis)
-                }
-                HStack{
-                    Text("Year")
-                    Spacer()
-                    Text(String(viewModel.vinDetails.year))
-                }
-            
             }
             .toolbar {
                 ToolbarItem {

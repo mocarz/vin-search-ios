@@ -18,6 +18,15 @@
 		1CB81F5E2CAD2E11000D9166 /* VinDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F5D2CAD2E11000D9166 /* VinDetailsView.swift */; };
 		1CB81F612CAD2EC8000D9166 /* VinDetailsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F602CAD2EC8000D9166 /* VinDetailsDto.swift */; };
 		1CB81F632CAD2F59000D9166 /* VinDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F622CAD2F59000D9166 /* VinDetailsViewModel.swift */; };
+		1CB81F662CAD4039000D9166 /* NinjasApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F652CAD4039000D9166 /* NinjasApiClient.swift */; };
+		1CB81F682CAD405C000D9166 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F672CAD405C000D9166 /* ApiError.swift */; };
+		1CB81F6A2CAD407E000D9166 /* ErrorDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F692CAD407E000D9166 /* ErrorDto.swift */; };
+		1CB81F6C2CAD40C2000D9166 /* ApiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F6B2CAD40C2000D9166 /* ApiRequestProtocol.swift */; };
+		1CB81F6E2CAD40D8000D9166 /* RequestMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F6D2CAD40D8000D9166 /* RequestMethodType.swift */; };
+		1CB81F702CAD40F0000D9166 /* VinLookupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F6F2CAD40F0000D9166 /* VinLookupRequest.swift */; };
+		1CB81F722CAD41A9000D9166 /* VinApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F712CAD41A9000D9166 /* VinApiClientProtocol.swift */; };
+		1CB81F752CAD46CF000D9166 /* VinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F742CAD46CF000D9166 /* VinService.swift */; };
+		1CB81F772CAD4738000D9166 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F762CAD4738000D9166 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,15 @@
 		1CB81F5D2CAD2E11000D9166 /* VinDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinDetailsView.swift; sourceTree = "<group>"; };
 		1CB81F602CAD2EC8000D9166 /* VinDetailsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinDetailsDto.swift; sourceTree = "<group>"; };
 		1CB81F622CAD2F59000D9166 /* VinDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinDetailsViewModel.swift; sourceTree = "<group>"; };
+		1CB81F652CAD4039000D9166 /* NinjasApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinjasApiClient.swift; sourceTree = "<group>"; };
+		1CB81F672CAD405C000D9166 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		1CB81F692CAD407E000D9166 /* ErrorDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDto.swift; sourceTree = "<group>"; };
+		1CB81F6B2CAD40C2000D9166 /* ApiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestProtocol.swift; sourceTree = "<group>"; };
+		1CB81F6D2CAD40D8000D9166 /* RequestMethodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethodType.swift; sourceTree = "<group>"; };
+		1CB81F6F2CAD40F0000D9166 /* VinLookupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinLookupRequest.swift; sourceTree = "<group>"; };
+		1CB81F712CAD41A9000D9166 /* VinApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinApiClientProtocol.swift; sourceTree = "<group>"; };
+		1CB81F742CAD46CF000D9166 /* VinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinService.swift; sourceTree = "<group>"; };
+		1CB81F762CAD4738000D9166 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,9 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				1CB81F2F2CAD2B6C000D9166 /* VinSearchApp.swift */,
+				1CB81F762CAD4738000D9166 /* Config.swift */,
 				1CB81F5B2CAD2D2E000D9166 /* MainView */,
 				1CB81F332CAD2B6C000D9166 /* Item.swift */,
 				1CB81F5C2CAD2E01000D9166 /* DetailsView */,
+				1CB81F732CAD46A7000D9166 /* Services */,
 				1CB81F5F2CAD2EB2000D9166 /* Networking */,
 				1CB81F352CAD2B85000D9166 /* Assets.xcassets */,
 				1CB81F372CAD2B85000D9166 /* Preview Content */,
@@ -159,6 +179,12 @@
 			isa = PBXGroup;
 			children = (
 				1CB81F642CAD30E6000D9166 /* DTO */,
+				1CB81F652CAD4039000D9166 /* NinjasApiClient.swift */,
+				1CB81F712CAD41A9000D9166 /* VinApiClientProtocol.swift */,
+				1CB81F6F2CAD40F0000D9166 /* VinLookupRequest.swift */,
+				1CB81F6B2CAD40C2000D9166 /* ApiRequestProtocol.swift */,
+				1CB81F6D2CAD40D8000D9166 /* RequestMethodType.swift */,
+				1CB81F672CAD405C000D9166 /* ApiError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -167,8 +193,17 @@
 			isa = PBXGroup;
 			children = (
 				1CB81F602CAD2EC8000D9166 /* VinDetailsDto.swift */,
+				1CB81F692CAD407E000D9166 /* ErrorDto.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		1CB81F732CAD46A7000D9166 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1CB81F742CAD46CF000D9166 /* VinService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,11 +336,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB81F6C2CAD40C2000D9166 /* ApiRequestProtocol.swift in Sources */,
+				1CB81F662CAD4039000D9166 /* NinjasApiClient.swift in Sources */,
+				1CB81F772CAD4738000D9166 /* Config.swift in Sources */,
 				1CB81F322CAD2B6C000D9166 /* VinMainView.swift in Sources */,
 				1CB81F342CAD2B6C000D9166 /* Item.swift in Sources */,
+				1CB81F6E2CAD40D8000D9166 /* RequestMethodType.swift in Sources */,
 				1CB81F632CAD2F59000D9166 /* VinDetailsViewModel.swift in Sources */,
 				1CB81F5E2CAD2E11000D9166 /* VinDetailsView.swift in Sources */,
+				1CB81F682CAD405C000D9166 /* ApiError.swift in Sources */,
 				1CB81F302CAD2B6C000D9166 /* VinSearchApp.swift in Sources */,
+				1CB81F702CAD40F0000D9166 /* VinLookupRequest.swift in Sources */,
+				1CB81F6A2CAD407E000D9166 /* ErrorDto.swift in Sources */,
+				1CB81F752CAD46CF000D9166 /* VinService.swift in Sources */,
+				1CB81F722CAD41A9000D9166 /* VinApiClientProtocol.swift in Sources */,
 				1CB81F612CAD2EC8000D9166 /* VinDetailsDto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
