@@ -10,12 +10,24 @@ import Combine
 
 class VinService {
     let apiClient: VinApiClientProtocol
+    let vinPersistentStore: VinPersistentStore
 
-    init(apiClient: VinApiClientProtocol = NinjasApiClient(apiKey: NINJAS_API_KEY)) {
+    init(
+        apiClient: VinApiClientProtocol = NinjasApiClient(apiKey: NINJAS_API_KEY),
+        vinPersistentStore: VinPersistentStore = VinPersistentStore.shared) {
         self.apiClient = apiClient
+        self.vinPersistentStore = vinPersistentStore
     }
 
     func searchVin(vin: String) -> AnyPublisher<VinDetailsDto, Error> {
         return apiClient.vinLookup(vin: vin)
+    }
+
+    func appendVinDetailsToStore(item: VinDetails) {
+        vinPersistentStore.appendItem(item: item)
+    }
+
+    func fetchVinDetailsFromStore() -> [VinDetails] {
+        return vinPersistentStore.fetchItems()
     }
 }

@@ -12,7 +12,7 @@ import SwiftData
 struct VinSearchApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            VinDetails.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,8 +25,11 @@ struct VinSearchApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(detailViewForVin: { vin in
+            VinMainView(detailViewForVin: { vin in
                 let viewModel = VinDetailsViewModel(vin: vin)
+                return VinDetailsView(viewModel: viewModel)
+            }, detailViewForVinDetails: { vinDetails in
+                let viewModel = VinDetailsViewModel(vinDetails: vinDetails)
                 return VinDetailsView(viewModel: viewModel)
             })
         }

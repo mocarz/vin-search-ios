@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class VinDetailsViewModel: ObservableObject {
-    @Published private(set) var vinDetails: VinDetailsDto?
+    @Published private(set) var vinDetails: VinDetails?
     @Published var error: Error?
 
     private let vinService: VinService
@@ -20,7 +20,7 @@ class VinDetailsViewModel: ObservableObject {
         search(vin: vin)
     }
 
-    init(vinDetails: VinDetailsDto, vinService: VinService = VinService()) {
+    init(vinDetails: VinDetails, vinService: VinService = VinService()) {
         self.vinDetails = vinDetails
         self.vinService = vinService
     }
@@ -40,7 +40,17 @@ class VinDetailsViewModel: ObservableObject {
                 case .finished: print("Publisher is finished")
                 }
             }, receiveValue: { [unowned self] data in
-                self.vinDetails = data
+                self.vinDetails = data.toModel()
             }).store(in: &cancellables)
+    }
+
+    func storeVinDetails(vinDetails: VinDetails) {
+        vinService.appendVinDetailsToStore(item: vinDetails)
+    }
+}
+
+private extension VinDetailsDto {
+    func toModel() -> VinDetails {
+        return VinDetails(vin: vin, country: country, region: region, wmi: wmi, vds: vds, vis: vis, year: year)
     }
 }

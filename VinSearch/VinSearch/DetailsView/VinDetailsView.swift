@@ -16,7 +16,15 @@ struct VinDetailsView: View {
     init(viewModel: VinDetailsViewModel){
         self.viewModel = viewModel
     }
-    
+
+    func dismissAndSave() {
+        self.dismiss()
+
+        if let vinDetails = viewModel.vinDetails {
+            viewModel.storeVinDetails(vinDetails: vinDetails)
+        }
+    }
+
     var body: some View {
         NavigationView {
             List {
@@ -39,7 +47,7 @@ struct VinDetailsView: View {
             .toolbar {
                 ToolbarItem {
                     Button("Dismiss") {
-                        dismiss()
+                        dismissAndSave()
                     }
                 }
             }
@@ -63,7 +71,7 @@ private struct Row: View {
 }
 
 #Preview {
-    let vinDetails = VinDetailsDto(vin: "JT3HP10VXW7092383", country: "Poland", region: "Europe", wmi: "ABCDEF", vds: "GHJI", vis: "PdO123", year: 2014)
+    let vinDetails = VinDetails(vin: "JT3HP10VXW7092383", country: "Poland", region: "Europe", wmi: "ABCDEF", vds: "GHJI", vis: "PdO123", year: 2014)
     let viewModel = VinDetailsViewModel(vinDetails: vinDetails)
     return VinDetailsView(viewModel: viewModel)
 }
