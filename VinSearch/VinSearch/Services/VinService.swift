@@ -13,7 +13,7 @@ class VinService {
     let vinPersistentStore: VinPersistentStore
 
     init(
-        apiClient: VinApiClientProtocol = NinjasApiClient(apiKey: NINJAS_API_KEY),
+        apiClient: VinApiClientProtocol = NinjasApiClient(apiKey: NINJAS_API_KEY, throughputStrategy: THROUGHPUT_STRATEGY),
         vinPersistentStore: VinPersistentStore = VinPersistentStore.shared) {
         self.apiClient = apiClient
         self.vinPersistentStore = vinPersistentStore

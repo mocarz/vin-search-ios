@@ -8,3 +8,9 @@
 import Foundation
 
 let NINJAS_API_KEY = ""
+
+let THROUGHPUT_STRATEGY = QueueThroughputStrategy(
+    rate: UInt(10),
+    interval: .seconds(60),
+    scheduler: DispatchQueue(label: "com.vinsearch.network1")
+)

@@ -10,11 +10,12 @@ import Combine
 
 class NinjasApiClient: VinApiClientProtocol {
     private let baseURL = URL(string: "https://api.api-ninjas.com/")!
-
     private let apiKey: String
+    private let throughputStrategy: ThroughputStrategy
 
-    init(apiKey: String) {
+    init(apiKey: String, throughputStrategy: ThroughputStrategy) {
         self.apiKey = apiKey
+        self.throughputStrategy = throughputStrategy
     }
 
     func vinLookup(vin: String) -> AnyPublisher<VinDetailsDto, Error> {
@@ -26,6 +27,7 @@ class NinjasApiClient: VinApiClientProtocol {
         let request = apiRequest.request(with: baseURL)
         return URLSession.shared.dataTaskPublisher(for: request)
             .subscribe(on: DispatchQueue.global(qos: .background))
+            .rateLimited(by: self.throughputStrategy)
             .mapError({ error in
                 return ApiError.transportError(error.localizedDescription)
             })

@@ -31,6 +31,13 @@
 		1CB81F812CAD6B66000D9166 /* VinDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F802CAD6B66000D9166 /* VinDetails.swift */; };
 		1CB81F832CAD6D40000D9166 /* VinMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F822CAD6D40000D9166 /* VinMainViewModel.swift */; };
 		1CB81F852CAD6E21000D9166 /* Identify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F842CAD6E21000D9166 /* Identify.swift */; };
+		1CB81F8C2CAD7831000D9166 /* Publishers+RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F872CAD7831000D9166 /* Publishers+RateLimiter.swift */; };
+		1CB81F8D2CAD7831000D9166 /* RateLimiter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F882CAD7831000D9166 /* RateLimiter.swift */; };
+		1CB81F8E2CAD7831000D9166 /* Logs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F892CAD7831000D9166 /* Logs.swift */; };
+		1CB81F8F2CAD7831000D9166 /* QueueThroughputStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F8A2CAD7831000D9166 /* QueueThroughputStrategy.swift */; };
+		1CB81F902CAD7831000D9166 /* ThroughputStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F8B2CAD7831000D9166 /* ThroughputStrategy.swift */; };
+		1CB81F932CAD7891000D9166 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB81F922CAD7891000D9166 /* Logging */; };
+		1CB81F972CAD7965000D9166 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB81F962CAD7965000D9166 /* Collections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +85,11 @@
 		1CB81F802CAD6B66000D9166 /* VinDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinDetails.swift; sourceTree = "<group>"; };
 		1CB81F822CAD6D40000D9166 /* VinMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinMainViewModel.swift; sourceTree = "<group>"; };
 		1CB81F842CAD6E21000D9166 /* Identify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identify.swift; sourceTree = "<group>"; };
+		1CB81F872CAD7831000D9166 /* Publishers+RateLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publishers+RateLimiter.swift"; sourceTree = "<group>"; };
+		1CB81F882CAD7831000D9166 /* RateLimiter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimiter.swift; sourceTree = "<group>"; };
+		1CB81F892CAD7831000D9166 /* Logs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logs.swift; sourceTree = "<group>"; };
+		1CB81F8A2CAD7831000D9166 /* QueueThroughputStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueueThroughputStrategy.swift; sourceTree = "<group>"; };
+		1CB81F8B2CAD7831000D9166 /* ThroughputStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThroughputStrategy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB81F972CAD7965000D9166 /* Collections in Frameworks */,
+				1CB81F932CAD7891000D9166 /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +126,7 @@
 				1CB81F412CAD2B86000D9166 /* VinSearchTests */,
 				1CB81F4B2CAD2B86000D9166 /* VinSearchUITests */,
 				1CB81F2D2CAD2B6C000D9166 /* Products */,
+				1CB81F952CAD7965000D9166 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +203,7 @@
 		1CB81F5F2CAD2EB2000D9166 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				1CB81F862CAD7831000D9166 /* RateLimiter */,
 				1CB81F642CAD30E6000D9166 /* DTO */,
 				1CB81F652CAD4039000D9166 /* NinjasApiClient.swift */,
 				1CB81F712CAD41A9000D9166 /* VinApiClientProtocol.swift */,
@@ -234,6 +250,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1CB81F862CAD7831000D9166 /* RateLimiter */ = {
+			isa = PBXGroup;
+			children = (
+				1CB81F872CAD7831000D9166 /* Publishers+RateLimiter.swift */,
+				1CB81F882CAD7831000D9166 /* RateLimiter.swift */,
+				1CB81F892CAD7831000D9166 /* Logs.swift */,
+				1CB81F8A2CAD7831000D9166 /* QueueThroughputStrategy.swift */,
+				1CB81F8B2CAD7831000D9166 /* ThroughputStrategy.swift */,
+			);
+			path = RateLimiter;
+			sourceTree = "<group>";
+		};
+		1CB81F952CAD7965000D9166 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +285,10 @@
 			dependencies = (
 			);
 			name = VinSearch;
+			packageProductDependencies = (
+				1CB81F922CAD7891000D9166 /* Logging */,
+				1CB81F962CAD7965000D9166 /* Collections */,
+			);
 			productName = VinSearch;
 			productReference = 1CB81F2C2CAD2B6C000D9166 /* VinSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -322,6 +361,10 @@
 				Base,
 			);
 			mainGroup = 1CB81F232CAD2B6C000D9166;
+			packageReferences = (
+				1CB81F912CAD7891000D9166 /* XCRemoteSwiftPackageReference "swift-log" */,
+				1CB81F942CAD78E5000D9166 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = 1CB81F2D2CAD2B6C000D9166 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -364,12 +407,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB81F902CAD7831000D9166 /* ThroughputStrategy.swift in Sources */,
 				1CB81F6C2CAD40C2000D9166 /* ApiRequestProtocol.swift in Sources */,
+				1CB81F8C2CAD7831000D9166 /* Publishers+RateLimiter.swift in Sources */,
 				1CB81F852CAD6E21000D9166 /* Identify.swift in Sources */,
 				1CB81F662CAD4039000D9166 /* NinjasApiClient.swift in Sources */,
+				1CB81F8D2CAD7831000D9166 /* RateLimiter.swift in Sources */,
 				1CB81F812CAD6B66000D9166 /* VinDetails.swift in Sources */,
 				1CB81F772CAD4738000D9166 /* Config.swift in Sources */,
 				1CB81F322CAD2B6C000D9166 /* VinMainView.swift in Sources */,
+				1CB81F8E2CAD7831000D9166 /* Logs.swift in Sources */,
 				1CB81F832CAD6D40000D9166 /* VinMainViewModel.swift in Sources */,
 				1CB81F6E2CAD40D8000D9166 /* RequestMethodType.swift in Sources */,
 				1CB81F632CAD2F59000D9166 /* VinDetailsViewModel.swift in Sources */,
@@ -380,6 +427,7 @@
 				1CB81F7E2CAD69C9000D9166 /* VinPersistentStore.swift in Sources */,
 				1CB81F6A2CAD407E000D9166 /* ErrorDto.swift in Sources */,
 				1CB81F752CAD46CF000D9166 /* VinService.swift in Sources */,
+				1CB81F8F2CAD7831000D9166 /* QueueThroughputStrategy.swift in Sources */,
 				1CB81F7C2CAD5C37000D9166 /* ErrorAlert.swift in Sources */,
 				1CB81F722CAD41A9000D9166 /* VinApiClientProtocol.swift in Sources */,
 				1CB81F612CAD2EC8000D9166 /* VinDetailsDto.swift in Sources */,
@@ -706,6 +754,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1CB81F912CAD7891000D9166 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.1;
+			};
+		};
+		1CB81F942CAD78E5000D9166 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1CB81F922CAD7891000D9166 /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CB81F912CAD7891000D9166 /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+		1CB81F962CAD7965000D9166 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CB81F942CAD78E5000D9166 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1CB81F242CAD2B6C000D9166 /* Project object */;
 }
