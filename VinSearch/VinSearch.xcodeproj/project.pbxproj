@@ -27,6 +27,7 @@
 		1CB81F722CAD41A9000D9166 /* VinApiClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F712CAD41A9000D9166 /* VinApiClientProtocol.swift */; };
 		1CB81F752CAD46CF000D9166 /* VinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F742CAD46CF000D9166 /* VinService.swift */; };
 		1CB81F772CAD4738000D9166 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F762CAD4738000D9166 /* Config.swift */; };
+		1CB81F7C2CAD5C37000D9166 /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB81F7B2CAD5C37000D9166 /* ErrorAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		1CB81F712CAD41A9000D9166 /* VinApiClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinApiClientProtocol.swift; sourceTree = "<group>"; };
 		1CB81F742CAD46CF000D9166 /* VinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinService.swift; sourceTree = "<group>"; };
 		1CB81F762CAD4738000D9166 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1CB81F7B2CAD5C37000D9166 /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				1CB81F5C2CAD2E01000D9166 /* DetailsView */,
 				1CB81F732CAD46A7000D9166 /* Services */,
 				1CB81F5F2CAD2EB2000D9166 /* Networking */,
+				1CB81F7A2CAD5C2A000D9166 /* Other */,
 				1CB81F352CAD2B85000D9166 /* Assets.xcassets */,
 				1CB81F372CAD2B85000D9166 /* Preview Content */,
 			);
@@ -204,6 +207,14 @@
 				1CB81F742CAD46CF000D9166 /* VinService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1CB81F7A2CAD5C2A000D9166 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1CB81F7B2CAD5C37000D9166 /* ErrorAlert.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 				1CB81F702CAD40F0000D9166 /* VinLookupRequest.swift in Sources */,
 				1CB81F6A2CAD407E000D9166 /* ErrorDto.swift in Sources */,
 				1CB81F752CAD46CF000D9166 /* VinService.swift in Sources */,
+				1CB81F7C2CAD5C37000D9166 /* ErrorAlert.swift in Sources */,
 				1CB81F722CAD41A9000D9166 /* VinApiClientProtocol.swift in Sources */,
 				1CB81F612CAD2EC8000D9166 /* VinDetailsDto.swift in Sources */,
 			);

@@ -10,6 +10,7 @@ import Combine
 
 class VinDetailsViewModel: ObservableObject {
     @Published private(set) var vinDetails: VinDetailsDto?
+    @Published var error: Error?
 
     private let vinService: VinService
     private var cancellables = Set<AnyCancellable>()
@@ -27,8 +28,17 @@ class VinDetailsViewModel: ObservableObject {
     private func search(vin: String) {
         vinService.searchVin(vin: vin)
             .receive(on: RunLoop.main)
-            .sink(receiveCompletion: { _ in
-
+            .sink(receiveCompletion: { [unowned self] completion in
+                switch completion {
+                case .failure(let error):
+                    if let error = error as? ApiError {
+                        self.error = error
+                    } else {
+                        self.error = ApiError.unknownError
+                    }
+                    print("Error \(error)")
+                case .finished: print("Publisher is finished")
+                }
             }, receiveValue: { [unowned self] data in
                 self.vinDetails = data
             }).store(in: &cancellables)

@@ -44,6 +44,7 @@ struct VinDetailsView: View {
                 }
             }
             .navigationBarTitle("VIN Details")
+            .errorAlert(error: $viewModel.error)
         }
     }
 }
