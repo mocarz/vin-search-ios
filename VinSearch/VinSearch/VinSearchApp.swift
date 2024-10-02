@@ -25,7 +25,11 @@ struct VinSearchApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(detailViewForVin: { vin in
+                let vinDetails = VinDetailsDto(vin: "JT3HP10VXW7092383", country: "Poland", region: "Europe", wmi: "ABCDEF", vds: "GHJI", vis: "PdO123", year: 2014)
+                let viewModel = VinDetailsViewModel(vinDetails: vinDetails)
+                return VinDetailsView(viewModel: viewModel)
+            })
         }
         .modelContainer(sharedModelContainer)
     }
