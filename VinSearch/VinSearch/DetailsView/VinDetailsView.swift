@@ -21,41 +21,13 @@ struct VinDetailsView: View {
         NavigationView {
             List {
                 if let vinDetails = viewModel.vinDetails {
-                    HStack {
-                        Text("VIN")
-                        Spacer()
-                        Text(vinDetails.vin)
-                    }
-                    HStack {
-                        Text("Country")
-                        Spacer()
-                        Text(vinDetails.country)
-                    }
-                    HStack {
-                        Text("Region")
-                        Spacer()
-                        Text(vinDetails.region)
-                    }
-                    HStack {
-                        Text("WMI")
-                        Spacer()
-                        Text(vinDetails.wmi)
-                    }
-                    HStack {
-                        Text("VDS")
-                        Spacer()
-                        Text(vinDetails.vds)
-                    }
-                    HStack {
-                        Text("VIS")
-                        Spacer()
-                        Text(vinDetails.vis)
-                    }
-                    HStack {
-                        Text("Year")
-                        Spacer()
-                        Text(String(vinDetails.year))
-                    }
+                    Row(label: "VIN", value: vinDetails.vin)
+                    Row(label: "Country", value: vinDetails.country)
+                    Row(label: "Region", value: vinDetails.region)
+                    Row(label: "WMI", value: vinDetails.wmi)
+                    Row(label: "VDS", value: vinDetails.vds)
+                    Row(label: "VIS", value: vinDetails.vis)
+                    Row(label: "Year", value: String(vinDetails.year))
                 } else {
                     HStack {
                         Spacer()
@@ -72,6 +44,19 @@ struct VinDetailsView: View {
                 }
             }
             .navigationBarTitle("VIN Details")
+        }
+    }
+}
+
+private struct Row: View {
+    var label: String
+    var value: String
+    
+    var body: some View {
+        HStack {
+            Text(label)
+            Spacer()
+            Text(value)
         }
     }
 }
