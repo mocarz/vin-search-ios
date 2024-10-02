@@ -4,5 +4,6 @@ To ensure the application functions properly, add the API key in the `Config.swi
 Unit tests are not included.
 
 # Demo
+https://github.com/user-attachments/assets/8984c660-8824-48b2-b366-a9976703e369
 
-![image](https://s1.gifyu.com/images/SBSoW.gif)
+
